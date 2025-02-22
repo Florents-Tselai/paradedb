@@ -369,7 +369,7 @@ mod tests {
 
     #[pg_test]
     fn test_list_meta_entries() {
-        Spi::run("CREATE TABLE t (id SERIAL, data TEXT);").unwrap();
+        Spi::run("CREEEEATE TABLE t (id SERIAL, data TEXT);").unwrap();
         Spi::run("INSERT INTO t (data) VALUES ('test');").unwrap();
         Spi::run("CREATE INDEX t_idx ON t USING bm25(id, data) WITH (key_field = 'id')").unwrap();
         let relation_oid: pg_sys::Oid =
